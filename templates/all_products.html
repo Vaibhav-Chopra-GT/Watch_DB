@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>All Watches Available</h1>
+
+<br>
+<br>
+<table class="table-light">
+{% for d in data%}
+{{d.0}} - Rs {{d.7}}
+<br>
+{% endfor %}
+</table>
+{% endblock %}

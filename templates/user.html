@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>Hello {{user_name}}</h1>
+<br>
+<br>
+<a href="{{url_for('prod')}}" class="btn btn-outline-secondary btn-lgbtn-secondary">View all Products</a>
+<!-- <button href="{{url_for('startup')}}" type="button" class="btn btn-outline-secondary btn-lg" >View all Products</button> -->
+<br>
+<br>
+<!-- <table>
+{% for d in data%}
+{{d.0}} - Rs {{d.7}}
+<br>
+{% endfor %}
+</table> -->
+{% endblock %}
