@@ -3,4 +3,4 @@
 in the folder-
 `python -m venv virt`,
 `cd virt/scripts`,
-`activate`, then `flask run`
+`activate`, then `set FLASK_APP=hello.py`, then `flask run`
