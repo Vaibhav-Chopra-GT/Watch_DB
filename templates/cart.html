@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cart</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/" class="home"> BACK </a>
+      <h1 class="heading">Time After Time</h1>
+      <a href="cart" class="home"></a>
+    </div>
+    <h2 class="subheading">SHOP</h2>
+    <div class="box-big" id="small-box">
+      
+      <h2 class="box-head">Cart</h2>
+      {% for d in data %}
+        <div class="cart-entry">
+          <!-- <div class="cart-picture"></div> -->
+          <img class = "cart-picture" src="static/images/{{d[0]}}.jpeg" alt="Product Image">
+          <div class="cart-title">{{d[0]}}</div>
+          <a href="{{ url_for('remove_cart', p_id=d[2]) }}" class="cart-remove">Remove</a>
+          <div class="cart-price">₹{{d[1]}}</div>
+        </div>
+      {% endfor %}
+      <!-- <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">Omega Speedmaster</div>
+        <a class="cart-remove">Remove</a>
+        <div class="cart-price">₹10,000</div>
+      </div>
+      <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">Omega Speedmaster</div>
+        <a class="cart-remove">Remove</a>
+        <div class="cart-price">₹10,000</div>
+      </div>
+      <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">Omega Speedmaster</div>
+        <a class="cart-remove">Remove</a>
+        <div class="cart-price">₹10,000</div>
+      </div> -->
+      <h2 class="box-head" style="font-size: 28px">Total: ₹{{data3[0][0]}}</h2>
+      <h2 class="box-head" style="font-size: 28px">Balance: ₹{{data2[0][0]}}</h2>
+      <div class="login">
+        <a href="{{ url_for('buy_now') }}">
+        <button class="login-action" style="margin-bottom: 50px">
+          Buy Now
+        </button>
+      </a>
+      </div>
+    </div>
+  </body>
+</html>

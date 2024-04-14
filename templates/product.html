@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Product</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <a href="#" onclick="goBack()" class="home"> BACK </a>
+        <script>
+          function goBack() {
+              window.history.back();
+          }
+        </script>
+      <h1 class="heading">Time After Time</h1>
+      <a href="{{url_for('cart')}}" class="home"> CART </a>
+    </div>
+    <h2 class="subheading">SHOP</h2>
+    <div class="box-big">
+      <h2 class="box-head">{{data[0][1]}}</h2>
+      <div class="box-inner">
+        <!-- <div class="product-image"> -->
+          <img class = "product-image" src="{{url_for('static', filename = 'images/' + data[0][1] + '.jpeg')}}" alt="Product Image">
+        <!-- </div> -->
+        <div class="product-price">₹{{data[0][8]}}</div>
+        <div class="product-description">
+          {{data[0][10]}}
+        </div>
+        <div class="button-container">
+          <!-- <button href="{{url_for('cart')}}" class="add-to-cart">Add to Cart</button> -->
+          <a href="{{ url_for('add_cart', p_id=data[0][0]) }}" class="add-to-cart">
+            <button class = "add-to-cart">Add to Cart</button>
+          </a>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,13 +1,81 @@
-{% extends 'base.html' %}
-
-{% block content %}
-
-<h1>Hello World</h1>
-<p>My first</p>
-<h3>list</h3>
-
-{% for item in list %}
-{{item}}
-{% endfor %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Time After Time</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      {% if btn == "LOGOUT"%}
+      <a href="{{ url_for('logout') }}" class="home"> LOGOUT </a>
+      {% else %}
+      <a href="login" class="home"> LOGIN </a>
+      {% endif %}
+      <h1 class="heading">Time After Time</h1>
+      <a href="cart" class="home"> CART </a>
+      
+    </div>
+    
+    <h2 class="subheading">SHOP</h2>
+    
+    
+    <div class="search">
+      <!-- <div class="search-container">
+        <input
+          type="text"
+          class="search-bar"
+          placeholder="🔎 Search for products..."
+        />
+      </div> -->
+      <form action="{{ url_for('search_products') }}" method="GET" class = "search-container">
+        <input
+            type="text"
+            class="search-bar"
+            name="search_query"
+            placeholder=" Search for products..."
+        />
+        <!-- <button type="submit"></button> -->
+    </form>
+    </div>
+    <div class="browse">
+      <h2 class="box-head">Browse</h2>
+      {% for d in data %}
+        <a class="item" href="product/{{d[0]}}">
+          <!-- <div class="browse-picture"></div> -->
+          <img class = "browse-picture" src="static/images/{{d[1]}}.jpeg" alt="Product Image">
+          <!-- <div class = "browse-picture" style="background: url('static/images/{{d[1]}}.jpeg'); background-repeat: no-repeat"  alt="Product Image">
+          </div> -->
+          <div class="browse-title">{{d[1]}}</div>
+          <div class="price">₹{{d[8]}}</div>
+          <div class="description">{{d[4]}} / {{d[5]}}</div>
+        </a>
+      {% endfor %}
+      <!-- <a class="item" href="product">
+        <div class="browse-picture"></div>
+        <div class="browse-title">Omega Speedmaster</div>
+        <div class="price">₹10,000</div>
+        <div class="description">Men / Analog</div>
+      </a>
+      <a class="item" href="product">
+        <div class="browse-picture"></div>
+        <div class="browse-title">Omega Speedmaster</div>
+        <div class="price">₹10,000</div>
+        <div class="description">Men / Analog</div>
+      </a>
+      <a class="item" href="product">
+        <div class="browse-picture"></div>
+        <div class="browse-title">Omega Speedmaster</div>
+        <div class="price">₹10,000</div>
+        <div class="description">Men / Analog</div>
+      </a> -->
+    </div>
+  </body>
+</html>

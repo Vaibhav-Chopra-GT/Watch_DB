@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="stylesheet" href="static/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="header">
+      <a href="/" class="home"> BACK </a>
+      <h1 class="heading">Time After Time</h1>
+      <a href="cart" class="home"> CART </a>
+    </div>
+    <h2 class="subheading">SHOP</h2>
+    <div class="box-big" id="small-box">
+      <h2 class="box-head">Search Results</h2>
+      {% for d in data %}
+        <a href="product/{{d[0]}}">
+        <div class="cart-entry">
+            <!-- <a  class = "item" href="product/{{d[0]}}"></a> -->
+          <!-- <div class="cart-picture"> -->
+            <img class = "cart-picture" src="static/images/{{d[1]}}.jpeg" alt="Product Image">
+          <!-- </div> -->
+          <div class="cart-title">{{d[1]}}</div>
+          <div class="cart-price">₹{{d[8]}}</div>
+        </div>
+        </a>
+      {% endfor %}
+      <!-- <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">{{data}}</div>
+        <div class="cart-price">50 Pieces</div>
+      </div>
+      <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">Omega Speedmaster</div>
+        <div class="cart-price">50 Pieces</div>
+      </div>
+      <div class="cart-entry">
+        <div class="cart-picture"></div>
+        <div class="cart-title">Omega Speedmaster</div>
+        <div class="cart-price">50 Pieces</div>
+      </div> -->
+    </div>
+  </body>
+</html>
