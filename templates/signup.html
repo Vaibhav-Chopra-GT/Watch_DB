@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body style="margin-bottom: 200px">
+    <div class="header">
+      <a href="/" class="home"> HOME </a>
+      <h1 class="heading">Time After Time</h1>
+      <a href="cart" class="home"> CART </a>
+    </div>
+    <h2 class="subheading">SHOP</h2>
+    <div class="login-box" style="width: 75%; height: 90%">
+      <form action="{{ url_for('signup2') }}" class = "login-box" style="width: 75%; height: 90%" method="post">
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "first_name" class="login-bar" placeholder="First Name" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "middle_name" class="login-bar" placeholder="Middle Name" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "last_name" class="login-bar" placeholder="Last Name" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "age" class="login-bar" placeholder="Age" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "mobile_num" class="login-bar" placeholder="Mobile" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "email" class="login-bar" placeholder="E-Mail" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "house_num" class="login-bar" placeholder="House Number" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "locality" class="login-bar" placeholder="Locality" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "city" class="login-bar" placeholder="City" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "state" class="login-bar" placeholder="State" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "pincode" class="login-bar" placeholder="Pincode" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "landmark" class="login-bar" placeholder="Landmark" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "card_num" class="login-bar" placeholder="Card Number" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "cvv" class="login-bar" placeholder="CVV" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "expiry" class="login-bar" placeholder="Expiry" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "name_on_card" class="login-bar" placeholder="Name on Card" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "bank_name" class="login-bar" placeholder="Bank Name" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "account_num" class="login-bar" placeholder="Account Number" />
+        </div>
+        <div class="login-container">
+          <input type="text" name = "ifsc" class="login-bar" placeholder="IFSC Code" />
+        </div>
+      </div>
+      <div class="login">
+        <div class="login-container">
+          <input type="text" name = "password" class="login-bar" placeholder="Password" />
+        </div>
+      </div>
+      <div class="login">
+        <button type="submit" class="login-action">Sign Up</button>
+        <!-- <button class="login-action">Sign In</button> -->
+      </div>
+    </form>
+    </div>
+  </body>
+</html>

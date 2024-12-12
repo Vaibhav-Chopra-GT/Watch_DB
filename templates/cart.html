@@ -30,6 +30,31 @@
           <div class="cart-title">{{d[0]}}</div>
           <a href="{{ url_for('remove_cart', p_id=d[2]) }}" class="cart-remove">Remove</a>
           <div class="cart-price">₹{{d[1]}}</div>
+          <div class="quantity">
+            <form>
+              <a href="{{ url_for('dec_qty', p_id = d[2]) }}">
+              <div
+                class="value-button"
+                id="decrease"
+                onclick="decreaseValue()"
+                value="Decrease Value"
+              >
+                -
+            </div>
+            </a>
+              <input type="number" id="number" value="{{d[3]}}" />
+              <a href="{{ url_for('inc_qty', p_id = d[2]) }}">
+              <div
+                class="value-button"
+                id="increase"
+                onclick="increaseValue()"
+                value="Increase Value"
+              >
+                +
+              </div>
+            </a>
+            </form>
+          </div>
         </div>
       {% endfor %}
       <!-- <div class="cart-entry">
