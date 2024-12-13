@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, session, redirect, url_for
 from flask_mysqldb import MySQL
+from flask import jsonify
 app = Flask(__name__)
 
 app.config['MYSQL_HOST'] = 'localhost'
@@ -45,18 +46,39 @@ def pnf(err):return render_template("404.html"), 404
 
 
 
+# @app.route('/')
+# def index2():
+#     cur = mysql.connection.cursor()
+#     cur.execute("SELECT * FROM Product WHERE Availability = 'available'")
+#     if 'logged_in' in session:
+#         btn = 'LOGOUT'
+#     else:
+#         btn = 'LOGIN'
+#     fetchdata = cur.fetchall()
+#     cur.close()
+    
+#     return render_template("index.html", data = fetchdata, btn = btn)
 @app.route('/')
 def index2():
     cur = mysql.connection.cursor()
     cur.execute("SELECT * FROM Product WHERE Availability = 'available'")
-    if 'logged_in' in session:
-        btn = 'LOGOUT'
-    else:
-        btn = 'LOGIN'
     fetchdata = cur.fetchall()
     cur.close()
-    
-    return render_template("index.html", data = fetchdata, btn = btn)
+
+    products = [
+        {
+            "id": row[0],
+            "name": row[1],
+            "price": row[8],
+            "description": f"{row[4]} / {row[5]}",
+            "image": f"static/images/{row[1]}.jpeg"
+        }
+        for row in fetchdata
+    ]
+
+    btn = 'LOGOUT' if 'logged_in' in session else 'LOGIN'
+
+    return jsonify({"products": products, "btn": btn})
 
 @app.route('/login')
 def login():
