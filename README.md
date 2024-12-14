@@ -36,3 +36,7 @@ activate
 set FLASK_APP=hello.py
 flask run
 ```
+
+## Development
+
+The branch test2 is used for development of the react app.
