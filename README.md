@@ -4,7 +4,7 @@
 
 ## Overview
 
-This e-commerce platform allows users to browse, search, and purchase products online. Built using MySQL, Flask (Python 3), HTML, CSS, and JavaScript, it provides a seamless shopping experience with various user-friendly features.
+This e-commerce platform allows users to browse, search, and purchase products online. Built using React, MySQL, Flask (Python 3), HTML, CSS, and JavaScript, it provides a seamless shopping experience with various user-friendly features.
 
 ## Features
 
@@ -25,7 +25,7 @@ This e-commerce platform allows users to browse, search, and purchase products o
 ## Technology Stack
 
 - **Backend**: MySQL, Flask (Python 3)
-- **Frontend**: HTML, CSS, JavaScript
+- **Frontend**: HTML, CSS, JavaScript, React
 
 ## Setup
 
