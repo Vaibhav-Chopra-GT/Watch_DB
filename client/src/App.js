@@ -9,10 +9,15 @@ function App() {
     fetch('http://127.0.0.1:5000/')
       .then(response => response.json())
       .then(data => {
+        console.log("Fetched data:", data);
         setProducts(data.products);
         setBtn(data.btn);
-      });
-  }, []);
+      })
+      .catch(error => console.error("Fetch error:", error));
+  }
+  
+  
+  , []);
 
   return (
     <div>

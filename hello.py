@@ -2,7 +2,8 @@ from flask import Flask, render_template, request, session, redirect, url_for
 from flask_mysqldb import MySQL
 from flask import jsonify
 app = Flask(__name__)
-
+from flask_cors import CORS
+CORS(app)
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
 app.config['MYSQL_PASSWORD'] = 'Vaibhav@1'
@@ -71,7 +72,9 @@ def index2():
             "name": row[1],
             "price": row[8],
             "description": f"{row[4]} / {row[5]}",
-            "image": f"static/images/{row[1]}.jpeg"
+            "image": f"http://127.0.0.1:5000/static/images/{row[1]}.jpeg"
+
+            # "image": f"static/images/{row[1]}.jpeg"
         }
         for row in fetchdata
     ]

@@ -236,7 +236,7 @@ a:hover {
   width: 200px;
   height: 100%;
   border-radius: 15px 0px 0px 15px;
-  background: url(watch_picture.jpg);
+  /* background: url(watch_picture.jpg); */
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
@@ -310,7 +310,7 @@ a:hover {
   width: 350px;
   height: 100%;
   border-radius: 15px 0px 0px 15px;
-  background: url(watch_picture.jpg);
+  /* background: url(watch_picture.jpg); */
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
@@ -440,7 +440,7 @@ a:hover {
   width: 150px;
   height: 100%;
   border-radius: 15px 0px 0px 15px;
-  background: url(watch_picture.jpg);
+  /* background: url(watch_picture.jpg); */
   background-size: cover;
   background-position-x: center;
   background-position-y: center;
